@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  binotify-app-web:
+    extends:
+      file: ../binotify-app/docker-compose.yml
+      service: binotify-app-web
+    env_file: .env
+  binotify-app-db:
+    extends:
+      file: ../binotify-app/docker-compose.yml
+      service: binotify-app-db
+    env_file: .env
+  binotify-app-phpmyadmin:
+    extends:
+      file: ../binotify-app/docker-compose.yml
+      service: binotify-app-phpmyadmin
+    env_file: .env
+  binotify-premium-app:
+    extends:
+      file: ../binotify-premium-app/docker-compose.yml
+      service: binotify-premium-app
+    env_file: .env
+  binotify-rest-service-server:
+    extends:
+      file: ../binotify-rest-service/docker-compose.yml
+      service: binotify-rest-service-server
+    env_file: .env
+  binotify-rest-service-db:
+    extends:
+      file: ../binotify-rest-service/docker-compose.yml
+      service: binotify-rest-service-db
+    env_file: .env
+  binotify-rest-service-cache:
+    extends:
+      file: ../binotify-rest-service/docker-compose.yml
+      service: binotify-rest-service-cache
+    env_file: .env
+  binotify-soap-service-soap:
+    extends:
+      file: ../binotify-soap-service/docker-compose.yml
+      service: binotify-soap-service-soap
+    env_file: .env
+  binotify-soap-service-db:
+    extends:
+      file: ../binotify-soap-service/docker-compose.yml
+      service: binotify-soap-service-db
+    env_file: .env
+
+networks:
+  binotify-soap:
+  rest-service:
+  binotify-app:
